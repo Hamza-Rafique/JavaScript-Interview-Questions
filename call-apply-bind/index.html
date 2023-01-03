@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Method call Apply bind js</title>
+  </head>
+  <body>
+    <h1>Method Call Apply bind js</h1>
+    <script>
+      //problem statement for call method
+      let printDetails = function (state) {
+        console.log(this.name + " " + state);
+      };
+
+      let userDetails = {
+        name: "hamza Rafique",
+        Age: 26,
+        Designation: "software Engineer",
+      };
+      printDetails.call(userDetails, "Lahore pakistan ");
+
+      let userDetailsTwo = {
+        name: "Asad Rafique",
+        Age: 29,
+        Designation: "software Engineer",
+      };
+      // function borrowing
+      printDetails.call(userDetailsTwo, "Sialkot Pakistan");
+
+      //apply method we just pass bind array of parament in apply method as argument
+
+      printDetails.apply(userDetailsTwo, ["Zafarwal", "Pakistan"]);
+
+      //Bind method
+
+      let newFun = printDetails.bind(userDetailsTwo, "Sialkot Pakistan");
+        newFun()
+    </script>
+  </body>
+</html>
