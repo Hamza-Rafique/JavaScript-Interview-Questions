@@ -829,9 +829,9 @@
       //    console.log(index,std.first_name)
       //   })
 
-      //   student.forEach((std, index) => {
-      //     console.log(std.ip_address, index);
-      //   });
+        student.forEach((std, index) => {
+          console.log('foreach',std, index);
+        });
 
       //filter
       //   student.filter(function (data) {
@@ -844,10 +844,10 @@
 
       //map function
 
-      // const map =student.map((std, index)=>{
-      //     return `${std.gender}`
-      // })
-      // console.log(map, 'map')
+      const map =student.map((std, index)=>{
+          return `${std.gender}`
+      })
+      console.log(map, 'map')
 
       //sort
     //   const sortdata = student.sort((s1, s2) =>
@@ -856,9 +856,9 @@
     //   console.log(sortdata, "sortdata ");
 
     //reduce,
-    let age = 10
-    const reduce = student.reduce((prv)=> prv.id + age)
-    console.log(reduce)
+    // let age = 10
+    // const reduce = student.reduce((prv)=> prv.id + age)
+    // console.log(reduce)
     </script>
   </body>
 </html>

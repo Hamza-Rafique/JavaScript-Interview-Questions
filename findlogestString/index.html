@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find logest String in Array</title>
+  </head>
+  <body>
+    <script>
+      let Array = [
+        "some",
+        "something",
+        "somethingnew",
+        "exta some thing new",
+        "awesome",
+      ];
+      console.log(Array, "array");
+      let check = Array.reduce( function(total, current, currentindex, arr){
+          return {total, current, currentindex, arr}
+      });
+
+      let stingFind = function(a, b){
+              return a.indexOf() > b.indexOf()? a: b
+          }
+      let largertArr = Array.reduce(
+        stingFind 
+      )
+      console.log(largertArr, 'largertArr')
+    //   function FindLargestValue() {
+    //       return Array.reduce((arr)=>{
+            
+    //           if (arr[i] < arr[j]){
+    //               console.log(arr[j])
+    //           }
+    //           else{
+    //               console.log('not found')
+    //           }
+    //         //   else FindLargestValue()
+    //         //   i++;
+    //         //   j++;
+    //         //   console.log( arr.length)
+    //       })
+    //   }
+    //   FindLargestValue()
+    </script>
+  </body>
+</html>

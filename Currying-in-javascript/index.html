@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currying in JavaScript</title>
+  </head>
+  <body>
+    <script>
+      //closer example
+      //   function Addition(a, b, c) {
+      //     return a + b + c;
+      //   }
+
+      //   let res = Addition(2, 3, 4);
+      //   console.log(res);
+
+      //   function Addition(a) {
+      //     return function (b) {
+      //       return function (c) {
+      //           return a + b + c
+      //       };
+      //     };
+      //   }
+
+      //   let res = Addition(2);
+      //  let data = res(4);
+      //  let dataone = data(7)
+      // console.log(data)
+      // console.log(dataone)
+      // console.log(Addition(2)(4)(12))
+
+      //Currying in Javascript
+
+      userObj = {
+        name: "Ajy",
+        age: 28,
+      };
+      function userInfo(obj) {
+        return function (userInfo) {
+          obj[userInfo];
+        };
+      }
+
+      let res = userInfo(userObj);
+      console.log(res('name'));
+    </script>
+  </body>
+</html>
