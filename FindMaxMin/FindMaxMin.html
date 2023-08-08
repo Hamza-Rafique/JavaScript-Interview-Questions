@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      //using loops
+    //   function findMinMax(arr) {
+    //     if (!arr || arr.length === 0) {
+    //       return [undefined, undefined];
+    //     }
+
+    //     let min = arr[0];
+    //     let max = arr[0];
+
+    //     for (let i = 1; i < arr.length; i++) {
+            
+    //       if (arr[i] < min) {
+
+    //         min = arr[i];
+
+    //       } else if (arr[i] > max) {
+
+    //         max = arr[i];
+    //       }
+    //     }
+
+    //     return [min, max];
+    //   }
+
+
+      function findMinMax(array){
+        if(!array && array.length < 0){
+            return undefined
+        }
+       return  Math.min(...array)
+      }
+      // Example usage:
+      const myArray = [12, 5, 7, 30, 8, 19];
+      console.log(findMinMax(myArray))
+    //   const [minValue, maxValue] = findMinMax(myArray);
+    //   console.log("Minimum value:", minValue);
+    //   console.log("Maximum value:", maxValue);
+    </script>
+  </body>
+</html>
