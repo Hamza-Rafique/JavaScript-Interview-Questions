@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Missing Value form Array find</title>
+  </head>
+  <body>
+    <h1>Missing Array</h1>
+   
+    <script>
+      function findMissingInteger(arr) {
+        let xor1 = 0; // XOR of all numbers from 1 to 10
+        let xor2 = 0; // XOR of all elements in the array
+
+        // XOR of all numbers from 1 to 10
+        for (let i = 1; i <= 10; i++) {
+          xor1 ^= i;
+          console.log(xor1 ^= i , 'xor1')
+        }
+
+        // XOR of all elements in the array
+        for (let num of arr) {
+          xor2 ^= num;
+          console.log(  xor2 ^= num, 'xor2')
+        }
+
+        // XOR of both XORs will give the missing integer
+        return xor1 ^ xor2;
+      }
+
+      const array = [1, 2, 3, 4, 5, 6, 7, 8, 10]; // One integer is missing (9)
+      const missingInteger = findMissingInteger(array);
+      console.log(`The missing integer is: ${missingInteger}`);
+    </script>
+  </body>
+</html>
