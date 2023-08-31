@@ -1,83 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Find Duplicated Number in Array</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>find Duplicated number in array</h1>
     <script>
+      //1.Using an Object to Track Frequencies:
+      //  const FindDuplicated=(array) =>{
 
-    //1.Using an Object to Track Frequencies:
-    //  const FindDuplicated=(array) =>{
+      //     const frequency = {};
+      //     const duplicates = [];
 
-    //     const frequency = {};
-    //     const duplicates = [];
+      //   for(const num of array){
+      //     console.log('num', num)
+      //     frequency[num] = (frequency[num] || 0) + 1;
+      //     if(frequency[num] === 2){
+      //         duplicates.push(num)
+      //     }
+      //     console.log('frequency' ,frequency[num])
+      //   }
+      //   return duplicates
+      // }
+      //  const array = [1,2,3,4,4,5,4,3,42];
+      //  console.log( FindDuplicated(array), 'find duplicated array')
 
-    //   for(const num of array){
-    //     console.log('num', num)
-    //     frequency[num] = (frequency[num] || 0) + 1;
-    //     if(frequency[num] === 2){
-    //         duplicates.push(num)
-    //     }
-    //     console.log('frequency' ,frequency[num])
-    //   }
-    //   return duplicates
-    // }
-    //  const array = [1,2,3,4,4,5,4,3,42];
-    //  console.log( FindDuplicated(array), 'find duplicated array')
+      //2.Using a Set to Track Duplicates:
 
+      //  const FindDuplicatedUsingSet=(array)=>{
+      //        const uniqueElemnet = new Set();
+      //        const dubplicates =  new Set();
 
-     //2.Using a Set to Track Duplicates:
+      //        for(const num of array){
 
-    //  const FindDuplicatedUsingSet=(array)=>{
-    //        const uniqueElemnet = new Set();
-    //        const dubplicates =  new Set();
+      //         if(uniqueElemnet.has(num)){
+      //             dubplicates.add(num)
+      //         }else{
+      //             uniqueElemnet.add(num)
+      //         }
 
-    //        for(const num of array){
+      //        }
+      //        return Array.from(dubplicates)
+      //   }
+      //    console.log(FindDuplicatedUsingSet([1,1,2,3,5,6,6,7,8]))
 
-    //         if(uniqueElemnet.has(num)){
-    //             dubplicates.add(num)
-    //         }else{
-    //             uniqueElemnet.add(num)
-    //         }
+      //3.Using Nested Loops:
+      // const FindDuplicatedUsingNestedArray =(array)=>{
+      //     const duplicates = [];
 
-    //        }
-    //        return Array.from(dubplicates)
-    //   }
-    //    console.log(FindDuplicatedUsingSet([1,1,2,3,5,6,6,7,8])) 
-     
-    //3.Using Nested Loops:
-    // const FindDuplicatedUsingNestedArray =(array)=>{
-    //     const duplicates = [];
-        
-    //     for (let i = 0; i < array.length; i++){
-    //         console.log('upper array', i, array.length)
-    //         for(let j = i + 1; j < array.length; j++){
-    //          console.log('below array', j, array.length)
-    //          if(array[i] = array[j] && !duplicates.includes(array[i]))
-    //             duplicates.push(array[i])
-    //         }
-    //     }
-    //  return duplicates
-    // }
-    // console.log(FindDuplicatedUsingNestedArray([1,3,5,3,9,1,2,1]))
+      //     for (let i = 0; i < array.length; i++){
+      //         console.log('upper array', i, array.length)
+      //         for(let j = i + 1; j < array.length; j++){
+      //          console.log('below array', j, array.length)
+      //          if(array[i] = array[j] && !duplicates.includes(array[i]))
+      //             duplicates.push(array[i])
+      //         }
+      //     }
+      //  return duplicates
+      // }
+      // console.log(FindDuplicatedUsingNestedArray([1,3,5,3,9,1,2,1]))
 
+      //using filter and index method
 
-  //using filter and index method
+      function findDuplicatesUsingFilter(arr) {
+        return arr.filter((value, index) => arr.indexOf(value) !== index);
+      }
 
-  function findDuplicatesUsingFilter(arr) {
-    return arr.filter((value, index) => 
-    arr.indexOf(value) !== index);
-}
+      const array = [1, 2, 3, 2, 4, 4, 5];
+      const duplicates = findDuplicatesUsingFilter(array);
 
-const array = [1, 2, 3, 2, 4, 4, 5];
-const duplicates = findDuplicatesUsingFilter(array);
-
-console.log(duplicates);
-
+      console.log(duplicates);
     </script>
-</body>
+  </body>
 </html>

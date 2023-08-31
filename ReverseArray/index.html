@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revers Array Element</title>
+  </head>
+  <body>
+    <script>
+      // 1.using revrese methd?
+
+      function reversArray(arr) {
+        return arr.reverse();
+      }
+
+      // 2. Using a Loop:
+      function usingLoop(arr) {
+        let reverse = [];
+        for (let i = arr.length - 1; i > 0; i--) {
+          reverse.push(arr[i]);
+        }
+        return reverse;
+      }
+       console.log(usingLoop([2, 4, 6, 3, 2, 6, 4, 3]));
+      //  3. Using the reduce() Method:
+
+      function ReduceMethod(arr) {
+        return arr.reduce((reversed, current) => [current, ...reversed], []);
+      }
+      console.log(ReduceMethod([2, 4, 6, 3, 2, 6, 4, 3], "method"));
+
+      // 4. Using Recursion:
+      function reverseArrayUsingRecursion(arr) {
+       if (arr.length == 0) {
+        return []
+       }
+       const element = arr.pop()
+       return [element, ...reverseArrayUsingRecursion(arr)]
+      }
+      console.log(
+        reverseArrayUsingRecursion([2, 4, 6, 3, 2, 6, 4, 3], "Recursion")
+      );
+    </script>
+  </body>
+</html>

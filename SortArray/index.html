@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort a array with different way</title>
+</head>
+<body>
+    <script>
+        //with sort method
+
+        function SortMethods(array) {
+            return array.sort((a,b) => a - b)
+        }
+        // console.log(SortMethods(array))
+
+        // with marge sort algo
+        let array = [1,5,3,4,9,6];
+
+        function MargeSort(arr) {
+            let l = arr.length - 1;
+            
+            for (i = 0; i < l; i++){
+                for (j = 0; j < l + 1; j++){
+                 
+                    if (arr[j] > arr[j +1]) {
+                        const element = arr[j];
+                        arr[j + 1] = element
+                        console.log(arr[j + 1])
+                    }
+                }
+            }
+            return arr 
+        }
+        MargeSort(array)
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Questions</title>
+</head>
+<body>
+    <h2>String most important question</h2>
+    <script>
+        // Convert String to Array with Each Character:
+
+        let str = 'i am hamza rafique'
+        let arr = Array.from(str)
+        console.log(arr, 'arry')
+
+        // convert str in only 1 array,
+        let onearray = str.split(' ')
+        console.log(onearray, 'one array')
+
+        // Replace Any Character:
+        let replaceCharacter = str.replace('a', 'e');
+
+        console.log(replaceCharacter, 'replace character')
+
+        // Get Substring from String:
+
+        const substing = str.substring(12, 19)
+        console.log(substing, 'substing')
+
+        // Remove Last Character:
+        const removelastchar = str.slice(0, -1)
+        console.log(removelastchar, 'remove last char')
+
+        // Remove First Character:
+        const removefirstchar = str.slice(1)
+        console.log(removefirstchar, 'remove start char')
+
+        // Remove String Before Specific Character:
+        const removeStringBeforeSpecificChar = str.substring(str.indexOf(' ') + 1);
+        console.log(removeStringBeforeSpecificChar, 'remove string before specific character')
+
+        // Remove Extra Spaces from Both Sides:
+        const removeExtraSpaces = str.trim()
+        console.log(removeExtraSpaces)
+
+        //Find longest String in array
+        
+        const StrArray = ['Apple', 'banana', 'orange', 'pianapple', 'amrud', 'jamnu']
+        let longestStr = StrArray[0]
+        for (let index = 0; index < StrArray.length; index++) {
+            if(StrArray[index].length > longestStr.length){
+                longestStr = StrArray[index]
+            }
+            
+        }
+
+        console.log(longestStr, 'longest String')
+
+        // 2. Most commonly used character in a string. Write a function that takes a string and returns the character that is most commonly used in the string.
+
+    </script>
+</body>
+</html>
