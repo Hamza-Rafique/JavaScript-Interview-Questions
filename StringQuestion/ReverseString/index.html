@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String</title>
+  </head>
+  <body>
+    <script>
+      let Str = "Hey Im Hamza Rafique";
+      let reverseArray = Str.split("").reverse().join("");
+      console.log(reverseArray, "reverse array");
+
+      // join method
+      const elements = ["Sun", "Earth", "Moon"];
+
+    //   console.log(elements.join());
+      // output: "Sun,Earth,Moon"
+
+    //   console.log(elements.join(""));
+      // output: "SunEarthMoon"
+
+    //   console.log(elements.join("-"));
+      // output: "Sun-Earth-Moon"
+
+      //   without using anymethod
+
+      function ReverserFun(array) {
+        let res = "";
+        for (let i = 0; i < array.length; i++) {
+          console.log(res, res = array[i] + res, '2nd method');
+             res = array[i] + res;
+              return res
+        }
+      }
+      ReverserFun(Str);
+    </script>
+  </body>
+</html>
