@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function foo1()
+{
+  return {
+      bar: "hello"
+  };
+}
+function foo2()
+{
+  return
+  {
+      bar: "hello"
+  };
+}
+console.log("foo1 returns:");
+console.log(foo1());
+{bar:"hello"}
+console.log("foo2 returns:");
+console.log(foo2());
+{bar:"hello"}
+
+let number = 0;
+function outside(){
+    let number = 1;
+     console.log(number) //1
+    return function(){
+       console.log(number) //1
+        number += 1;
+        console.log(number) //2
+    }
+}
+const inside = outside();
+inside();
+inside();
+    </script>
+</body>
+</html>
