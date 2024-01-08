@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IsPrime Number</title>
+  </head>
+  <body>
+    <script>
+      //   function isPrime(n) {
+      //     if (n % 2 == 0) {
+      //       console.log("number is not prime");
+      //     } else {
+      //       console.log("number is prime");
+      //     }
+      //   }
+      //   isPrime(11);
+
+      function isPrime(number) {
+        // Check for special cases
+        if (number <= 1) {
+          return false;
+        } else if (number === 2) {
+          return true;
+        }
+
+        // Check for divisibility up to the square root of the number
+        console.log('sqrt', 'floor', Math.floor(Math.sqrt(number)))
+        const squareRoot = Math.floor(Math.sqrt(number));
+        console.log('squareRoot', squareRoot)
+        for (let i = 2; i <= squareRoot; i++) {
+          if (number % i === 0) {
+            return false;
+          }
+        }
+
+        // If no divisors found, the number is prime
+        return true;
+      }
+
+      // Example usage:
+      const num = 13; // Replace with the number you want to check
+      if (isPrime(num)) {
+        console.log(`${num} is a prime number.`);
+      } else {
+        console.log(`${num} is not a prime number.`);
+      }
+    </script>
+  </body>
+</html>
