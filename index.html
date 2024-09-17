@@ -3,102 +3,122 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript Preparation</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>JavaScript Interview and Coding Challenges</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow: auto;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+    }
+    button {
+      padding: 10px 15px;
+      margin-top: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .output {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #e9ecef;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      white-space: pre-wrap;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Sidebar with important topics -->
-    <nav class="sidebar">
-      <h2>JS Topics</h2>
-      <ul>
-        <li><a href="#intro">Introduction</a></li>
-        <li><a href="#datatypes">Data Types</a></li>
-        <li><a href="#functions">Functions</a></li>
-        <li><a href="#objects">Objects</a></li>
-        <li><a href="#dom">DOM Manipulation</a></li>
-        <li><a href="#promises">Promises & Async/Await</a></li>
-        <li><a href="#es6">ES6 Features</a></li>
-        <li><a href="#events">Event Handling</a></li>
-      </ul>
-    </nav>
 
-    <!-- Main content area -->
-    <div class="main-content">
-      <h1>JavaScript Preparation</h1>
-      <p>Prepare for JavaScript interviews and enhance your JavaScript skills by studying these essential topics.</p>
-      
-      <section id="intro">
-        <h2>Introduction to JavaScript</h2>
-        <p>JavaScript is a versatile, high-level, and interpreted programming language. It is widely used for both client-side and server-side web development.</p>
-      </section>
+<div class="container">
+  <h1>JavaScript Interview and Coding Challenges</h1>
 
-      <section id="datatypes">
-        <h2>Data Types</h2>
-        <ul>
-          <li>Primitive types (String, Number, Boolean, Undefined, Null, Symbol)</li>
-          <li>Reference types (Objects, Arrays, Functions)</li>
-        </ul>
-      </section>
+  <section id="call-apply-bind">
+    <h2>1. Call, Apply, and Bind Methods</h2>
+    <p>In JavaScript, the <code>call</code>, <code>apply</code>, and <code>bind</code> methods are used to change the <code>this</code> context of a function.</p>
+    <h3>Example:</h3>
+    <pre><code>
+const person = {
+  name: 'John',
+  greet: function(age) {
+    return `Hello, my name is ${this.name} and I'm ${age} years old.`;
+  }
+};
 
-      <section id="functions">
-        <h2>Functions</h2>
-        <p>Functions in JavaScript are first-class citizens. Learn about:</p>
-        <ul>
-          <li>Function declarations</li>
-          <li>Function expressions</li>
-          <li>Arrow functions</li>
-          <li>Callbacks</li>
-        </ul>
-      </section>
+const anotherPerson = { name: 'Jane' };
 
-      <section id="objects">
-        <h2>Objects</h2>
-        <p>Objects allow you to store collections of data. Key topics include:</p>
-        <ul>
-          <li>Object creation and manipulation</li>
-          <li>Prototypes and inheritance</li>
-          <li>Object methods and "this" keyword</li>
-        </ul>
-      </section>
+// Using call
+console.log(person.greet.call(anotherPerson, 25)); // Hello, my name is Jane and I'm 25 years old.
 
-      <section id="dom">
-        <h2>DOM Manipulation</h2>
-        <p>The DOM (Document Object Model) is a programming interface for web documents. Learn how to:</p>
-        <ul>
-          <li>Select and manipulate HTML elements</li>
-          <li>Create and append elements dynamically</li>
-          <li>Update styles and content in the DOM</li>
-        </ul>
-      </section>
+// Using apply
+console.log(person.greet.apply(anotherPerson, [30])); // Hello, my name is Jane and I'm 30 years old.
 
-      <section id="promises">
-        <h2>Promises & Async/Await</h2>
-        <p>Promises are used to handle asynchronous operations in JavaScript. Async/Await simplifies working with promises.</p>
-        <ul>
-          <li>Understanding promises</li>
-          <li>Promise chaining</li>
-          <li>Using async and await</li>
-        </ul>
-      </section>
+// Using bind
+const boundGreet = person.greet.bind(anotherPerson);
+console.log(boundGreet(35)); // Hello, my name is Jane and I'm 35 years old.
+    </code></pre>
 
-      <section id="es6">
-        <h2>ES6 Features</h2>
-        <p>ES6 introduced many new features in JavaScript:</p>
-        <ul>
-          <li>Let and const</li>
-          <li>Arrow functions</li>
-          <li>Template literals</li>
-          <li>Destructuring</li>
-          <li>Classes</li>
-        </ul>
-      </section>
+    <h3>Try it yourself:</h3>
+    <textarea id="code1">// Write your code here</textarea>
+    <br />
+    <button onclick="runCode('code1', 'output1')">Run Code</button>
+    <div id="output1" class="output"></div>
+  </section>
 
-      <section id="events">
-        <h2>Event Handling</h2>
-        <p>Learn how to handle user events like click, submit, hover, etc. using JavaScript event listeners.</p>
-      </section>
-    </div>
-  </div>
+  <section id="factorial">
+    <h2>2. Find Factorial</h2>
+    <p>A factorial of a number is the product of all positive integers less than or equal to that number. Here's an example of how to find the factorial of a number:</p>
+    <h3>Example:</h3>
+    <pre><code>
+function factorial(n) {
+  if (n === 0 || n === 1) return 1;
+  return n * factorial(n - 1);
+}
+
+console.log(factorial(5)); // Output: 120
+    </code></pre>
+
+    <h3>Try it yourself:</h3>
+    <textarea id="code2">// Write your code here</textarea>
+    <br />
+    <button onclick="runCode('code2', 'output2')">Run Code</button>
+    <div id="output2" class="output"></div>
+  </section>
+
+  <!-- Add more sections for other topics like Find GCD, Reverse Array, etc. -->
+
+</div>
+
+<script>
+  function runCode(inputId, outputId) {
+    const code = document.getElementById(inputId).value;
+    let output;
+    try {
+      output = eval(code);
+    } catch (error) {
+      output = error;
+    }
+    document.getElementById(outputId).textContent = output;
+  }
+</script>
+
 </body>
 </html>
