@@ -80,6 +80,27 @@
       }
       console.log(ReversMethod("im hamza rafique recursive function"));
       // 2. Most commonly used character in a string. Write a function that takes a string and returns the character that is most commonly used in the string.
+
+      function MostCommonlyUsedCharacter(str) {
+        let map = {};
+        for (let i = 0; i < str.length; i++) {
+          let char = str[i];
+          if (map[char]) {
+            map[char]++;
+          } else {
+            map[char] = 1;
+          }
+        }
+        let max = 0;
+        let char = "";
+        for (let key in map) {
+          if (map[key] > max) {
+            max = map[key];
+            char = key;
+          }
+        }
+        return char;
+      }
     </script>
   </body>
 </html>
