@@ -22,3 +22,22 @@ function countOccurrencesSplit(str, char) {
     return splitString.length - 1;
   }
   console.log(countOccurrencesSplit(str, chr))
+
+  //3 menthod 
+
+  function countOccurrences(str,char){
+    let count = 0;
+
+    for(const c of str){
+      if(c === char) count++;
+    }
+    return count;
+  }
+
+  //4
+
+ function countOccurrences(str, char) {
+  return str.split("").reduce((count, c) => {
+    return c === char ? count + 1 : count;
+  }, 0);
+}
